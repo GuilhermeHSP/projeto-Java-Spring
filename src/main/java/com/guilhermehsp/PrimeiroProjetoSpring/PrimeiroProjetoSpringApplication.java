@@ -28,13 +28,13 @@ public class PrimeiroProjetoSpringApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Categoria cat1 = new Categoria(1L, "Eletronicos");
-		Categoria cat2 = new Categoria(2L, "Livros");
+		Categoria cat1 = new Categoria(null, "Eletronicos");
+		Categoria cat2 = new Categoria(null, "Livros");
 		
-		Produto p1 = new Produto(1L, "TV", 2200.00, cat1);
-		Produto p2 = new Produto(2L, "Domain Driven Design", 120.00, cat2);
-		Produto p3 = new Produto(3L, "PS5", 2800.00, cat1);
-		Produto p4 = new Produto(4L, "Docker", 100.00, cat2);
+		Produto p1 = new Produto(null, "TV", 2200.00, cat1);
+		Produto p2 = new Produto(null, "Domain Driven Design", 120.00, cat2);
+		Produto p3 = new Produto(null, "PS5", 2800.00, cat1);
+		Produto p4 = new Produto(null, "Docker", 100.00, cat2);
 		
 		cat1.getProdutos().addAll(Arrays.asList(p1, p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2, p4));
