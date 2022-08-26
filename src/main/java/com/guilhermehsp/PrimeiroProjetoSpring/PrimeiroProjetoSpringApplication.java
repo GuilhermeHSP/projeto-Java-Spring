@@ -23,9 +23,11 @@ public class PrimeiroProjetoSpringApplication implements CommandLineRunner{
 		
 		Categoria cat1 = new Categoria(1L, "Eletronicos");
 		Categoria cat2 = new Categoria(2L, "Livros");
+		Categoria cat3 = new Categoria(3L, "Livros");
 		
 		repositorioCategoria.save(cat1);
 		repositorioCategoria.save(cat2);
+		repositorioCategoria.save(cat3);
 	}
 
 }
