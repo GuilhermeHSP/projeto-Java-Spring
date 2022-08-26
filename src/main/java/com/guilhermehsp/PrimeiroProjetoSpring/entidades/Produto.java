@@ -1,28 +1,27 @@
 package com.guilhermehsp.PrimeiroProjetoSpring.entidades;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-public class Categoria implements Serializable {
+public class Produto implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
+	private Double price;
 	
-	@JsonIgnore
-	private List<Produto> produtos = new ArrayList<>();
+	private Categoria categoria;
 	
-	public  Categoria() {
+	public Produto() {
+		
 	}
 
-	public Categoria(Long id, String name) {
+	public Produto(Long id, String name, Double price, Categoria categoria) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.price = price;
+		this.categoria = categoria;
 	}
 
 	public Long getId() {
@@ -41,12 +40,20 @@ public class Categoria implements Serializable {
 		this.name = name;
 	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
+	public Double getPrice() {
+		return price;
 	}
 
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	@Override
@@ -62,8 +69,9 @@ public class Categoria implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Categoria other = (Categoria) obj;
+		Produto other = (Produto) obj;
 		return Objects.equals(id, other.id);
 	}
-
+	
+	
 }
